@@ -16,14 +16,11 @@ char *ft_strcapitalize(char *str) // define a function that takes a string as in
     unsigned int i; // declare an unsigned integer variable i to be used as a loop counter
 
     i = 0; // initialize i to 0
-
     if (str[i] >= 'a' && str[i] <= 'z') // check if the first character of the string is a lowercase letter
     {
         str[i] -= 32; // if it is, convert it to uppercase by subtracting 32 from its ASCII value
     }
-
     i = 1; // set i to 1 to start processing the rest of the string
-
     while(str[i] != '\0') // loop through the string until the null terminator is reached
     {
         if (str[i] >= 'A' && str[i] <= 'Z') // check if the current character is an uppercase letter
