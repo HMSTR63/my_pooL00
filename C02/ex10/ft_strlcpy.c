@@ -60,9 +60,9 @@ unsigned int ft_strlcpy(char* dest, char* src, unsigned int size)
 }
 
 
-int main()
+/*int main()
 {
     char src[] = "Hello, World!";
     char dest[] = "";
     printf("%d | %s\n", ft_strlcpy(dest, src, 10), dest);
-}
+}*/
