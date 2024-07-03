@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_recursive_power.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sojammali <sojammali1337@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/05 18:40:36 by sojammali         #+#    #+#             */
-/*   Updated: 2024/06/05 22:48:26 by sojammali        ###   ########.fr       */
+/*   Created: 2024/07/03 03:07:44 by sojammali         #+#    #+#             */
+/*   Updated: 2024/07/03 03:23:58 by sojammali        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <unistd.h>
 
-/*void ft_putchar(char c)
+int ft_recursive_power(int nb, int power)
 {
-    write (1, &c, 1);
-}*/
-void ft_putstr(char *str)
-{
-    while(*str != '\0')
-    {
-        write (1, str++, 1);
-    }
+    if(power < 0)
+        return 0;
+    else if(power == 0)
+        return 1;
+    else 
+        return ft_recursive_power(nb, power - 1) * nb;
 }
-
-/*int main()
+/*#include <stdio.h>
+int main()
 {
-    char *str = "HMSTR";
-
-    ft_putstr(str);
+    int i = -1;
+    while(i <= 10)
+    {
+        printf("2^%d -> %d\n", i, ft_recursive_power(2, i));
+        i++;
+    }
     return 0;
 }*/

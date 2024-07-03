@@ -1,32 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sojammali <sojammali1337@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/05 18:40:36 by sojammali         #+#    #+#             */
-/*   Updated: 2024/06/05 22:48:26 by sojammali        ###   ########.fr       */
+/*   Created: 2024/06/12 16:51:39 by sojammali         #+#    #+#             */
+/*   Updated: 2024/06/12 21:43:56 by sojammali        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <unistd.h>
+int ft_strcmp(char *s1, char *s2)
+{
+    int h;
 
-/*void ft_putchar(char c)
-{
-    write (1, &c, 1);
-}*/
-void ft_putstr(char *str)
-{
-    while(*str != '\0')
+    h = 0;
+    while (s1[h] && s2[h] && s1[h] == s2[h])
     {
-        write (1, str++, 1);
+        h++;
     }
+    return (s1[h] - s2[h]);
 }
-
-/*int main()
-{
-    char *str = "HMSTR";
-
-    ft_putstr(str);
-    return 0;
-}*/

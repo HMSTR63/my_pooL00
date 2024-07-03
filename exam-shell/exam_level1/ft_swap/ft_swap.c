@@ -1,32 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sojammali <sojammali1337@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/05 18:40:36 by sojammali         #+#    #+#             */
-/*   Updated: 2024/06/05 22:48:26 by sojammali        ###   ########.fr       */
+/*   Created: 2024/06/27 04:04:44 by sojammali         #+#    #+#             */
+/*   Updated: 2024/06/27 04:05:36 by sojammali        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <unistd.h>
 
-/*void ft_putchar(char c)
+void	ft_swap(int *a, int *b)
 {
-    write (1, &c, 1);
-}*/
-void ft_putstr(char *str)
-{
-    while(*str != '\0')
-    {
-        write (1, str++, 1);
-    }
+    int tmp;
+
+    tmp = *a;
+    *a = *b;
+    *b = tmp;
 }
-
-/*int main()
-{
-    char *str = "HMSTR";
-
-    ft_putstr(str);
-    return 0;
-}*/

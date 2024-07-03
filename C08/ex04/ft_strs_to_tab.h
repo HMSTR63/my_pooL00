@@ -1,32 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_strs_to_tab.h                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sojammali <sojammali1337@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/05 18:40:36 by sojammali         #+#    #+#             */
-/*   Updated: 2024/06/05 22:48:26 by sojammali        ###   ########.fr       */
+/*   Created: 2024/07/01 02:11:38 by sojammali         #+#    #+#             */
+/*   Updated: 2024/07/01 02:12:37 by sojammali        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <unistd.h>
+#ifndef FT_STOCK_STR_H
+#define FT_STOCK_STR_H
 
-/*void ft_putchar(char c)
+typedef struct s_stock_str
 {
-    write (1, &c, 1);
-}*/
-void ft_putstr(char *str)
-{
-    while(*str != '\0')
-    {
-        write (1, str++, 1);
-    }
-}
+    int size;
+    char *str;
+    char *copy;
+}t_stock_str;
 
-/*int main()
-{
-    char *str = "HMSTR";
+t_stock_str *ft_strs_to_tab(int ac, char **av);
 
-    ft_putstr(str);
-    return 0;
-}*/
+#endif

@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_sqrt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sojammali <sojammali1337@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/05 18:40:36 by sojammali         #+#    #+#             */
-/*   Updated: 2024/06/05 22:48:26 by sojammali        ###   ########.fr       */
+/*   Created: 2024/07/03 04:19:07 by sojammali         #+#    #+#             */
+/*   Updated: 2024/07/03 04:25:44 by sojammali        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <unistd.h>
 
-/*void ft_putchar(char c)
+int ft_sqrt(int nb)
 {
-    write (1, &c, 1);
-}*/
-void ft_putstr(char *str)
-{
-    while(*str != '\0')
+    int i;
+    
+    i = 2;
+    if(nb <= 0)
+        return 0;
+    if(nb == 1)
+        return 1;
+    if(nb >= 2)
     {
-        write (1, str++, 1);
+        while(i * i <= nb)
+        {
+            if(i * i == nb)
+                return i;
+            i++;
+        }
     }
-}
-
-/*int main()
-{
-    char *str = "HMSTR";
-
-    ft_putstr(str);
     return 0;
-}*/
+}

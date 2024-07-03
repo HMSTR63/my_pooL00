@@ -1,32 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_fibonacci.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sojammali <sojammali1337@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/05 18:40:36 by sojammali         #+#    #+#             */
-/*   Updated: 2024/06/05 22:48:26 by sojammali        ###   ########.fr       */
+/*   Created: 2024/07/03 03:38:40 by sojammali         #+#    #+#             */
+/*   Updated: 2024/07/03 03:45:22 by sojammali        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <unistd.h>
 
-/*void ft_putchar(char c)
+int ft_fibonacci(int index)
 {
-    write (1, &c, 1);
-}*/
-void ft_putstr(char *str)
-{
-    while(*str != '\0')
-    {
-        write (1, str++, 1);
-    }
+   if(index < 0)
+        return -1;
+   else if(index <= 1)
+        return index;
+   else 
+        return ft_fibonacci(index - 1) + ft_fibonacci(index - 2); 
 }
 
-/*int main()
+/*#include <stdio.h>
+int main()
 {
-    char *str = "HMSTR";
-
-    ft_putstr(str);
+    int i = 0;
+    while(i <= 5)
+    {
+        printf("fib(%d) -> %d\n", i, ft_fibonacci(i));
+        i++;
+    }
     return 0;
 }*/

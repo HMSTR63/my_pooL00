@@ -1,32 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sojammali <sojammali1337@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/05 18:40:36 by sojammali         #+#    #+#             */
-/*   Updated: 2024/06/05 22:48:26 by sojammali        ###   ########.fr       */
+/*   Created: 2024/06/12 21:57:46 by sojammali         #+#    #+#             */
+/*   Updated: 2024/06/12 22:10:07 by sojammali        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <unistd.h>
+char *ft_strcat(char *dest, char *src)
+{
+    int h;
+    int m;
 
-/*void ft_putchar(char c)
-{
-    write (1, &c, 1);
-}*/
-void ft_putstr(char *str)
-{
-    while(*str != '\0')
+    h = 0;
+    m = 0;
+    while (dest[h] != '\0')
+        h++;
+    while (src[m] != '\0')
     {
-        write (1, str++, 1);
+        dest[h] = src[m];
+        m++;
+        h++;
     }
+    dest[h] = '\0';
+    return (dest);
 }
-
-/*int main()
-{
-    char *str = "HMSTR";
-
-    ft_putstr(str);
-    return 0;
-}*/

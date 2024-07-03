@@ -1,39 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   maff_alpha.c                                       :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sojammali <sojammali1337@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/09 15:09:48 by sojammali         #+#    #+#             */
-/*   Updated: 2024/06/09 15:26:12 by sojammali        ###   ########.fr       */
+/*   Created: 2024/06/29 04:43:27 by sojammali         #+#    #+#             */
+/*   Updated: 2024/06/29 04:45:10 by sojammali        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
 
-/*Write a program that displays the alphabet, with even letters in uppercase, and
-odd letters in lowercase, followed by a newline.*/
-void ft_putchar(char c)
+int ft_strlen(char *str)
 {
-    write (1, &c, 1);
-}
-int main(void)
-{
-    char h;
+    int i;
 
-    h = 97;
-    while(h <= 122)
+    i = 0;
+    while(str[i] != '\0')
     {
-        if (h % 2 == 0)
-        {
-            ft_putchar(h - 32);
-        }
-        else
-        {   
-            ft_putchar(h);
-        }
-        h++;
+        i++;
     }
-    ft_putchar('\n');
-    return 0;
+    return (i);
 }

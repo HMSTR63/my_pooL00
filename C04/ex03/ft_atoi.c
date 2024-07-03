@@ -1,32 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sojammali <sojammali1337@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/05 18:40:36 by sojammali         #+#    #+#             */
-/*   Updated: 2024/06/05 22:48:26 by sojammali        ###   ########.fr       */
+/*   Created: 2024/06/28 01:38:41 by sojammali         #+#    #+#             */
+/*   Updated: 2024/06/29 05:15:29 by sojammali        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <unistd.h>
 
-/*void ft_putchar(char c)
+int ft_atoi(const char *str)
 {
-    write (1, &c, 1);
-}*/
-void ft_putstr(char *str)
-{
-    while(*str != '\0')
+    int sign;
+    int res;
+
+    res = 0;
+    sign = 1;
+    while(*str == ' ' || (*str >= '\t' && '\r' >= *str))
     {
-        write (1, str++, 1);
+        str++;
     }
+    
+    while(*str == '-' || *str == '+')
+    {
+        if(*str == '-')
+            sign *= -1;
+        str++;
+    }
+    while(*str && *str >= '0' && '9' >= *str)
+    {
+        res = res * 10 + (*str - '0');
+        str++;
+    }
+    return res * sign;
 }
-
-/*int main()
-{
-    char *str = "HMSTR";
-
-    ft_putstr(str);
-    return 0;
-}*/
