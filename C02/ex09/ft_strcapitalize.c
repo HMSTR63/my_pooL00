@@ -6,9 +6,10 @@
 /*   By: sojammali <sojammali1337@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/09 04:36:34 by sojammali         #+#    #+#             */
-/*   Updated: 2024/06/09 05:22:07 by sojammali        ###   ########.fr       */
+/*   Updated: 2024/07/05 01:33:11 by sojammali        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include <unistd.h>
 
 char *ft_strcapitalize(char *str) // define a function that takes a string as input and returns a modified string
@@ -42,3 +43,13 @@ char *ft_strcapitalize(char *str) // define a function that takes a string as in
 
     return (str); // return the modified string
 }
+
+/*#include <stdio.h>
+
+int		main(void)
+{
+	char	str[] = "salut, comment tu vas ? 42mots quaRAnte-deux; cinquante+et+un";
+
+	printf(".%s.\n", ft_strcapitalize(str));
+    return (0);
+}*/
