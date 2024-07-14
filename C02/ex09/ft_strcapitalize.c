@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+/*#include <unistd.h>
 
 char *ft_strcapitalize(char *str) // define a function that takes a string as input and returns a modified string
 {
@@ -42,14 +42,45 @@ char *ft_strcapitalize(char *str) // define a function that takes a string as in
     }
 
     return (str); // return the modified string
-}
+}*/
 
-/*#include <stdio.h>
+#include<stdio.h>
 
-int		main(void)
+char    *ft_strcapitalize(char *str)
 {
-	char	str[] = "salut, comment tu vas ? 42mots quaRAnte-deux; cinquante+et+un";
+    int i = 0;
 
-	printf(".%s.\n", ft_strcapitalize(str));
-    return (0);
+    while((str[i] >= 'a' && str[i] <= 'z') || (str[i] >= 'A' && str[i] <= 'Z' && str[i]))
+    {
+        if(str[i] == ' ')
+        {
+            i++;
+            }
+           
+              if(i == 0 && str[i] >= 'a' && str[i] <= 'z')
+        {
+            str[i] -= 32;
+        }
+       
+        if(i > 0 && str[i] >= 'A' && str[i] <= 'Z' )
+        {
+            str[i] += 32;
+        }
+        if((i > 0 && str[i] >= 'a' && str[i] <= 'z') || (str[i] >= 'A' && str[i] <= 'Z'))
+        {
+         if(str[i - 1] == ' ' )
+            {
+                str[i] -= 32;
+            }
+        }
+        i++;
+    }
+    return str;
+}
+/*int main()
+{
+    char str[] = "gAhD gFhhD";
+
+    ft_strcapitalize(str);
+    printf("%s", str);
 }*/
