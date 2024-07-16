@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_abs.h                                           :+:      :+:    :+:   */
+/*   ft.h                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sojammali <sojammali1337@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/14 03:14:57 by sojammali         #+#    #+#             */
-/*   Updated: 2024/07/14 03:17:46 by sojammali        ###   ########.fr       */
+/*   Created: 2024/07/15 00:17:34 by sojammali         #+#    #+#             */
+/*   Updated: 2024/07/15 00:19:02 by sojammali        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#ifndef FT_ABS_H
-#define FT_ABS_H
+#ifndef FT_H
+#define FT_H
 
-#define ABS(nbr) ({ \
-                  int res; \
-                  if( (nbr) < 0){ \
-                        res = -(nbr); \
-                  } else { \
-                        res = (nbr); \
-                  } \
-                  res; \
-})
+#include <unistd.h>
 
-#endif // !FT_ABS_H
+void ft_putchar(char c);
+void ft_swap(int* a, int* b);
+void ft_putstr(char* str);
+int ft_strlen(char* str);
+int ft_strcmp(char* s1, char* s2);
+
+#endif

@@ -1,37 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sojammali <sojammali1337@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/28 01:38:41 by sojammali         #+#    #+#             */
-/*   Updated: 2024/06/29 05:15:29 by sojammali        ###   ########.fr       */
+/*   Created: 2024/07/15 00:29:30 by sojammali         #+#    #+#             */
+/*   Updated: 2024/07/15 00:30:36 by sojammali        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_atoi(const char *str)
+int ft_strlen(char *str)
 {
-    int sign;
-    int res;
+    int i;
 
-    res = 0;
-    sign = 1;
-    while(*str == ' ' || (*str >= '\t' && '\r' >= *str))
+    i = 0;
+    while(str[i])
     {
-        str++;
+        i++;
     }
-    
-    while(*str == '-' || *str == '+')
-    {
-        if(*str == '-')
-            sign *= -1;
-        str++;
-    }
-    while(*str && *str >= '0' && '9' >= *str)
-    {
-        res = res * 10 + (*str - '0');
-        str++;
-    }
-    return res * sign;
+    return (i);
 }

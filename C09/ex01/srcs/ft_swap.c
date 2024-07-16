@@ -1,25 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_abs.h                                           :+:      :+:    :+:   */
+/*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sojammali <sojammali1337@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/14 03:14:57 by sojammali         #+#    #+#             */
-/*   Updated: 2024/07/14 03:17:46 by sojammali        ###   ########.fr       */
+/*   Created: 2024/07/15 00:21:15 by sojammali         #+#    #+#             */
+/*   Updated: 2024/07/15 00:22:47 by sojammali        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#ifndef FT_ABS_H
-#define FT_ABS_H
 
-#define ABS(nbr) ({ \
-                  int res; \
-                  if( (nbr) < 0){ \
-                        res = -(nbr); \
-                  } else { \
-                        res = (nbr); \
-                  } \
-                  res; \
-})
+void    ft_swap(int *a, int *b)
+{
+    int tmp;
 
-#endif // !FT_ABS_H
+    tmp = *a;
+    *a = *b;
+    *b = tmp;
+}

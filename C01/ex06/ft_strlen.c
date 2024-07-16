@@ -9,7 +9,7 @@
 /*   Updated: 2024/07/04 15:32:37 by sojammali        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <unistd.h>
+// #include <unistd.h>
 
 /*void ft_putchar(char c)
 {
@@ -25,7 +25,7 @@ void ft_print_numbers(int n)
     }
     else
     {
-        ft_putchar(n + '0');   
+        ft_putchar(n + '0');
     }
 }*/
 int ft_strlen(char* str)
@@ -34,7 +34,7 @@ int ft_strlen(char* str)
 
     i = 0;
 
-    while (str[i] != '\0') 
+    while (str[i] != '\0')
     {
         i++;
     }

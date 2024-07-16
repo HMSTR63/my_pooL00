@@ -10,88 +10,44 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
-/*#include <unistd.h>
-int ft_strlen(char* str)
-{
-    int h;
 
-    h = 0;
-    while (str[h] != '\0') {
-        h++;
+unsigned int ft_strlcpy(char *dest, char *src, unsigned int size)
+{
+    unsigned int src_len = 0;
+    unsigned int i = 0;
+
+    /* Find the end of the source string */
+    while (src[src_len] != '\0')
+        src_len++;
+
+    /* If the destination buffer is too small, return the total length of the source string */
+    if (size == 0)
+        return src_len;
+
+    /* Copy as many bytes as will fit into the destination buffer */
+    while (i < size - 1 && src[i] != '\0')
+    {
+        dest[i] = src[i];
+        i++;
     }
-    return (h);
+
+    /* Ensure the destination string is null-terminated */
+    dest[i] = '\0';
+
+    /* Return the total length of the source string */
+    return src_len;
 }
-unsigned int ft_strlcpy(char* dest, char* src, unsigned int size)
-{
-    unsigned int str_len;
-    unsigned int h;
-
-    str_len = ft_strlen(dest);
-    h = 0;
-    if (size <= 0) 
-    {
-        return str_len;
-    }
-    while (h < size - 1 && src[h] != '\0') 
-    {
-        dest[h] = src[h];
-        h++;
-    }
-    dest[h] = '\0';
-    return str_len;
-}*/
-
-/*unsigned int ft_strlcpy(char* dest, char* src, unsigned int size)
-{
-    unsigned int h;
-
-    h = 0;
-    if (size == 0) 
-    {
-        return h;
-    }
-    while (h < size - 1 && src[h] != '\0') 
-    {
-        dest[h] = src[h];
-        h++;
-    }
-    dest[h] = '\0';
-    return h;
-}*/
-
 
 /*int main()
 {
     char src[] = "Hello, World!";
-    char dest[] = "";
-    printf("%d | %s\n", ft_strlcpy(dest, src, 10), dest);
+    char dest1[10];
+    char dest2[5];
+    char dest3[1];
+    char dest4[10] = "";
+
+    printf("%d | %s\n", ft_strlcpy(dest1, src, 10), dest1);
+    printf("%d | %s\n", ft_strlcpy(dest2, src, 5), dest2);
+    printf("%d | %s\n", ft_strlcpy(dest3, src, 1), dest3);
+    printf("%d | %s\n", ft_strlcpy(dest4, "", 5), dest4);
 }*/
-
-int	ft_strlen(char *str)
-{
-	int	i;
-
-	i = 0;
-	while(str[i] != '\0')
-		i++;
-	return(i);
-}
-
-unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
-{
-	unsigned int	i;
-	unsigned int	x;
-
-	x = ft_strlen(src);
-	i = 0;
-	if (size != 0)
-	{
-		while (src [i] != '\0' && i < size - 1)
-		{
-			dest[i] = src[i];
-			i++;
-		}
-		dest[i] = '\0';
-	}
-	return (x);
-}

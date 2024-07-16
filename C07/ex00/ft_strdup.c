@@ -23,22 +23,25 @@ int ft_strlen(char *s)
     return (i);
 }
 
-// This function takes a null-terminated string 'src' as input and returns a duplicate of the string.
 char *ft_strdup(char *src)
 {
-    char *dup;  // Declare a pointer 'dup' to hold the duplicate string.
-    int i;      // Initialize a counter variable 'i' to 0.
+    char *dup;
+    int i;
 
-    // Allocate memory for the duplicate string using malloc. The size of the memory block is
-    // equal to the length of the input string plus one for the null character.
-    if(!(dup = (char*)malloc(sizeof(char) * ft_strlen(src) + 1)))
-        return NULL;  // If memory allocation fails, return NULL.
+    i = 0;
+
+    // Allocate memory for the duplicate string using malloc.
+    dup = (char*)malloc(sizeof(char) * ft_strlen(src) + 1);
+
+    // If memory allocation fails, return NULL.
+    if(!dup)
+        return NULL;
 
     // Loop through the input string and copy each character to the duplicate string.
     while(src[i])
     {
-        dup[i] = src[i];  // Copy the character from 'src' to 'dup'.
-        i++;              // Increment the counter for each character copied.
+        dup[i] = src[i];
+        i++;
     }
 
     // Add a null character to the end of the duplicate string to make it null-terminated.

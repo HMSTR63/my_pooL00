@@ -60,8 +60,7 @@ void ft_sort_int_tab(int *tab, int size)
     }
 }
 
-
-int main()
+/*int main()
 {
     int tab[5] = {5, 4, 3, 2, 1};
     int i = 0;
@@ -73,4 +72,4 @@ int main()
         i++;
     }
     return 0;
-}
+}*/

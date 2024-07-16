@@ -5,45 +5,16 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sojammali <sojammali1337@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/05 18:40:36 by sojammali         #+#    #+#             */
-/*   Updated: 2024/06/05 22:48:26 by sojammali        ###   ########.fr       */
+/*   Created: 2024/07/15 00:23:13 by sojammali         #+#    #+#             */
+/*   Updated: 2024/07/15 00:24:15 by sojammali        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-//#include <unistd.h>
 
-/*void ft_putchar(char c)
-{
-    write (1, &c, 1);
-}*/
-/*void ft_putstr(char *str)
-{
-    while(*str != '\0')
-    {
-        write (1, str++, 1);
-    }
-}*/
+#include "ft.h"
 
-/*int main()
+void    ft_putstr(char *str)
 {
-    char *str = "HMSTR";
-
-    ft_putstr(str);
-    return 0;
-}*/
-#include <unistd.h>
-void ft_putchar(char c)
-{
-  write(1, &c, 1);
+    while(*str)
+        write(1, str++, 1);
 }
 
-void ft_putstr(char *str)
-{
-  while (*str)
-    ft_putchar(*str++);
-}
-
-/*int main()
-{
-  ft_putstr("Hamza \n");
-  return (0);
-}*/
